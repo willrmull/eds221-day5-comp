@@ -10,13 +10,13 @@ library(tidyverse)
 
 A population of fish we're interested in has four life stages: eggs (E), fry (F), juvenile (J), breeding adult (A). You are told that annually:
 
-- Each breeding adult will produce, on average, 600 eggs
-- 5% of eggs will survive to become fry
-- 20% of fry will survive to become juveniles
-- 16% of juveniles will survive to become adults
-- Adult survival rate year to year is 90%
+-   Each breeding adult will produce, on average, 600 eggs
+-   5% of eggs will survive to become fry
+-   20% of fry will survive to become juveniles
+-   16% of juveniles will survive to become adults
+-   Adult survival rate year to year is 90%
 
-Recall the Leslie matrix from EDS 212. Matrix multiplication (using the dot product `%*%` of the matrix with the populations at each life stage) yields the population structure at the following year. 
+Recall the Leslie matrix from EDS 212. Matrix multiplication (using the dot product `%*%` of the matrix with the populations at each life stage) yields the population structure at the following year.
 
 ### Create the Leslie matrix:
 
@@ -28,14 +28,14 @@ fish_leslie <- matrix(c(0, 0, 0, 600, 0.05, 0, 0, 0, 0, 0.20, 0, 0, 0, 0, 0.16, 
 fish_leslie
 ```
 
-The initial population structure is given by: 
+The initial population structure is given by:
+
 ```{r}
 # Initial population structure (Roe, Fry, Juvenile, Adult): 
 fish_year0 <- c(5000, 8000, 600, 400)
 ```
 
-
-Add line-by-line comments wheres prompted in the code below, explaining what each is doing. Make sure that you are talking with your neighbors about what is really being created at each step. 
+Add line-by-line comments wheres prompted in the code below, explaining what each is doing. Make sure that you are talking with your neighbors about what is really being created at each step.
 
 ```{r}
 # Model projections
@@ -70,4 +70,4 @@ ggplot(data = proj_df, aes(x = time_yr, y = stage_population)) +
 
 ```
 
-Test different combinations of survival / reproduction and starting population structures to see what happens! 
+Test different combinations of survival / reproduction and starting population structures to see what happens!
